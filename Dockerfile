@@ -1,4 +1,7 @@
-FROM php:8.0-apache
+FROM php:8.2-apache
+
+RUN docker-php-exit-install mysqli pdo pdo_mysql
+
 COPY ./var/www/html
 
-RUN a2enmod rewrite
+EXPOSE 80
